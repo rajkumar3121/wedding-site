@@ -1,0 +1,204 @@
+```html id="8h4pzn"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saloni ❤️ Harsh Raj Prince</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* WELCOME SCREEN */
+#welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg,#ff4d6d,#8338ec);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  text-align: center;
+}
+
+#welcome h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+}
+
+#welcome button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: white;
+  color: #ff4d6d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#ff4d6d,#8338ec);
+  text-align:center;
+}
+
+.hero h1 {
+  font-family:'Great Vibes', cursive;
+  font-size:60px;
+}
+
+#countdown {
+  margin-top:10px;
+  font-size:22px;
+}
+
+/* SECTION */
+section {
+  padding: 80px 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding:20px;
+  margin:15px auto;
+  max-width:300px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+iframe {
+  border-radius:10px;
+}
+
+/* BUTTON */
+.btn {
+  background:#ff4d6d;
+  padding:12px 25px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+<div id="welcome">
+  <h1>Welcome 💖</h1>
+  <p>You're invited to a beautiful wedding</p>
+  <button onclick="enterSite()">Enter Wedding</button>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#events">Events</a>
+  <a href="#venue">Venue</a>
+  <a href="#rsvp">RSVP</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <h2>We Are Getting Married</h2>
+  <h1>Saloni ❤️ Harsh Raj Prince</h1>
+  <h3>26 April 2026</h3>
+  <div id="countdown"></div>
+</div>
+
+<!-- EVENTS -->
+<section id="events">
+  <h2>Wedding Events</h2>
+  <div class="card">Haldi Ceremony</div>
+  <div class="card">Mehendi Ceremony</div>
+  <div class="card">Wedding Ceremony</div>
+</section>
+
+<!-- VENUE -->
+<section id="venue">
+  <h2>Venue</h2>
+  <p>Samastipur, Bihar</p>
+  <iframe 
+    src="https://maps.google.com/maps?q=Samastipur%20Bihar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="90%" height="300">
+  </iframe>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp">
+  <h2>RSVP</h2>
+  <p>Confirm your presence</p>
+
+  <!-- Replace this with your Google Form -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMY/viewform?embedded=true" width="90%" height="400"></iframe>
+</section>
+
+<section>
+  <h2>Made with ❤️ by a B.Tech Engineer</h2>
+</section>
+
+<script>
+// ENTER SITE FUNCTION
+function enterSite() {
+  document.getElementById("welcome").style.display = "none";
+}
+
+// COUNTDOWN
+let date = new Date("April 26, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+  let now = new Date().getTime();
+  let diff = date - now;
+
+  let d = Math.floor(diff/(1000*60*60*24));
+  let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  let m = Math.floor((diff%(1000*60*60))/(1000*60));
+
+  document.getElementById("countdown").innerHTML =
+  d+"d "+h+"h "+m+"m";
+},1000);
+</script>
+
+</body>
+</html>
+```
